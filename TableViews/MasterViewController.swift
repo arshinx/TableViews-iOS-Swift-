@@ -13,7 +13,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [AnyObject]()
     
-    let fruits = ["Apple", "Banana", "Kiwi", "Strawberry"]
+    let fruits = ["Apple", "Banana", "Kiwi", "Strawberry", "Watermelon", "Cantaloupe", "A", "B", "C"]
 
 
     override func viewDidLoad() {
@@ -72,8 +72,9 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
+        let fruit = fruits[indexPath.row]
         let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        cell.textLabel!.text = fruit
         return cell
     }
 
